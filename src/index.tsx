@@ -1,15 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import App from './app/App';
+import ErrorPage from './app/ErrorPage';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from 'react-router-dom';
+
+/**
+ * Starting point of the react app with routing support 
+ */
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <App/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "/",
+        element: <div>Converter</div>,
+      },
+      {
+        path: "myfiles/",
+        element: <div>My files</div>,
+      },
+    ],
+  },
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>
 );
 
