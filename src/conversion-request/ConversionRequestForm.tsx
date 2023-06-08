@@ -55,11 +55,13 @@ function ConversionRequestForm() {
       <Select
         options={originalFileTypeSelectOptions}
         onSelectionChange={originalTypeSelectionHandler}
+        placeholderText="Original file type"
       />
       <div>{originalType.displayValue}</div>
       <Select
         options={convertTypeSelectOptions}
         onSelectionChange={convertTypeSelectionHandler}
+        placeholderText="Converted file type"
       />
       <div>{convertType.displayValue}</div>
     </div>

@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a conversion request form 1`] = `
+<div>
+  <div>
+    <select
+      className="form-select"
+      onChange={[Function]}
+    >
+      <option
+        value=""
+      >
+        Original file type
+      </option>
+      <option
+        value="jpg"
+      >
+        jpeg/jpg
+      </option>
+      <option
+        value="png"
+      >
+        png
+      </option>
+    </select>
+  </div>
+  <div />
+  <div>
+    <select
+      className="form-select"
+      onChange={[Function]}
+    >
+      <option
+        value=""
+      >
+        Converted file type
+      </option>
+    </select>
+  </div>
+  <div />
+</div>
+`;

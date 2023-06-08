@@ -13,6 +13,7 @@ export interface SelectOption {
  * Input property args for a select control
  */
 export interface SelectProps {
+  placeholderText: string;
   options: SelectOption[];
   onSelectionChange: (optionId: string) => void;
 }
@@ -37,17 +38,16 @@ function createOptionElement(option: SelectOption): ReactElement {
  *   a react element
  */
 function Select(props: SelectProps) {
-  const { onSelectionChange, options } = props;
+  const { onSelectionChange, options, placeholderText } = props;
 
   const onSelectElementChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const optionId = event.target.value || '';
-    onSelectionChange(optionId);
+    onSelectionChange(event.target.value);
   };
 
   return (
     <div>
       <Form.Select onChange={onSelectElementChange}>
-        <option value="">--Please choose an option--</option>
+        <option value="">{placeholderText}</option>
         {
             options.map((option: SelectOption) => createOptionElement(option))
         }

@@ -23,7 +23,7 @@ function ErrorPage() {
       <main className="px-3 mb-auto">
         <h1>Oops!</h1>
         <p>Sorry, an unexpected error has occurred.</p>
-        <i>{error.statusText || error.message}</i>
+        <i>{error.statusText}</i>
       </main>
     </div>
   );

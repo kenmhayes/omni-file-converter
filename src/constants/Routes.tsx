@@ -4,6 +4,10 @@ import App from '../app/App';
 import ErrorPage from '../app/ErrorPage';
 import ConversionRequestForm from '../conversion-request/ConversionRequestForm';
 
+/**
+ * React Router object for the app, to be provided to a router provider
+ */
+
 const ROUTER = createBrowserRouter([
   {
     path: '/',

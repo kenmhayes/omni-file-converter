@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a navbar and content 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="container"
+  >
+    <nav
+      className="navbar navbar-expand-lg bg-body-tertiary"
+    >
+      <div
+        className="container-fluid"
+      >
+        <a
+          className="navbar-brand"
+          href="/"
+          onClick={[Function]}
+        >
+          Omni
+        </a>
+        <div
+          className="collapse navbar-collapse"
+          id="navbarNav"
+        >
+          <ul
+            className="navbar-nav"
+          >
+            <li
+              className="nav-item"
+            >
+              <a
+                className="nav-link"
+                href="/"
+                onClick={[Function]}
+              >
+                Convert
+              </a>
+            </li>
+            <li
+              className="nav-item"
+            >
+              <a
+                className="nav-link"
+                href="/myfiles"
+                onClick={[Function]}
+              >
+                My Files
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div
+    className="container"
+  />
+</div>
+`;

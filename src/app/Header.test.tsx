@@ -1,13 +1,13 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import App from './App';
 import { MemoryRouter } from 'react-router-dom';
+import Header from './Header';
 
-it('renders a navbar and content', () => {
-  // MemoryRouter is necessary for Links to work
+it('renders a navbar with links', () => {
+  // A router is necessary for Links to work
   const component = create(
     <MemoryRouter>
-      <App/ >
+      <Header/ >
     </MemoryRouter>
   );
   const tree = component.toJSON();

@@ -7,7 +7,7 @@ module.exports = {
       "airbnb/hooks",
       "airbnb-typescript"
     ],
-    "ignorePatterns": ["reportWebVitals.ts", "setupTests.ts", "*.d.ts", ".eslintrc.js"],
+    "ignorePatterns": ["reportWebVitals.ts", "setupTests.ts", "*.d.ts", ".eslintrc.js", "*.test.*"],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
       "project": "./tsconfig.json",
