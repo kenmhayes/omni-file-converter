@@ -1,8 +1,10 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Select, { SelectOption } from './Select';
 import { fireEvent, render } from '@testing-library/react';
 import ConversionRequestForm from './ConversionRequestForm';
+
+const originalSelectText = "Original file type";
+const convertedSelectText = "Converted file type";
 
 it('renders a conversion request form', () => {
   const component = create(
@@ -17,10 +19,7 @@ it('allows for selection of file types', () => {
         <ConversionRequestForm/>
     );
 
-    const originalSelectText = "Original file type";
     expect(queryByDisplayValue(originalSelectText)).toBeTruthy();
-
-    const convertedSelectText = "Converted file type";
     expect(queryByDisplayValue(convertedSelectText)).toBeTruthy();
 
     // Cannot select a converted file type without an original designated
@@ -47,4 +46,28 @@ it('allows for selection of file types', () => {
     fireEvent.change(getByDisplayValue(convertedSelectText), { target: { value: 'jpg'}});
 
     expect(queryByDisplayValue('jpeg/jpg')).toBeTruthy();
+});
+
+it('empties files on file type change', () => {
+  const newFile = new File(['hello'], 'hello.jpg', {type: 'image/jpg'})
+
+  const {queryByText, getByDisplayValue } = render(
+    <ConversionRequestForm/>
+  );
+
+  // Select jpg in the first select
+  fireEvent.change(getByDisplayValue(originalSelectText), { target: { value: 'jpg'}});
+
+  // Find file input, doesn't seem possible with react testing library with this 3rd party component
+  const fileInputQuery = document.querySelector("input");
+  expect(fileInputQuery).toBeTruthy();
+  const fileInput = fileInputQuery as HTMLInputElement;
+
+  fireEvent.change(fileInput, { target: { files: [newFile] }});
+  expect(queryByText(newFile.name)).toBeTruthy();
+  
+  // Change original file type
+  fireEvent.change(getByDisplayValue('jpeg/jpg'), { target: { value: 'png'}});
+
+  expect(queryByText(newFile.name)).toBeFalsy();
 });

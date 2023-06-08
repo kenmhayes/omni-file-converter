@@ -4,7 +4,7 @@ import App from './App';
 import { MemoryRouter } from 'react-router-dom';
 
 it('renders a navbar and content', () => {
-  // MemoryRouter is necessary for Links to work
+  // A router is necessary for Links to work
   const component = create(
     <MemoryRouter>
       <App/ >

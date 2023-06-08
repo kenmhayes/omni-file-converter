@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a file list 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-9"
+      >
+        File 1
+      </div>
+      <div
+        className="col"
+      >
+        <button
+          className="btn"
+          onClick={[Function]}
+          title="Remove File"
+          type="button"
+        >
+          <img
+            alt="Remove File"
+            height="32"
+            src="x-circle.svg"
+            width="32"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-9"
+      >
+        File 2
+      </div>
+      <div
+        className="col"
+      >
+        <button
+          className="btn"
+          onClick={[Function]}
+          title="Remove File"
+          type="button"
+        >
+          <img
+            alt="Remove File"
+            height="32"
+            src="x-circle.svg"
+            width="32"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-9"
+      >
+        File 3
+      </div>
+      <div
+        className="col"
+      >
+        <button
+          className="btn"
+          onClick={[Function]}
+          title="Remove File"
+          type="button"
+        >
+          <img
+            alt="Remove File"
+            height="32"
+            src="x-circle.svg"
+            width="32"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
