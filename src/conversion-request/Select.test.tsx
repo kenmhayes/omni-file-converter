@@ -4,37 +4,37 @@ import Select, { SelectOption } from './Select';
 import { fireEvent, render } from '@testing-library/react';
 
 it('renders a select form', () => {
-  const testOptions: SelectOption[] = [
+  const options: SelectOption[] = [
     { id: '1', displayValue: 'One' },
     { id: '2' , displayValue: 'Two' }
   ]
 
-  const testHandler = jest.fn();
+  const selectionChangeHandler = jest.fn();
 
   const component = create(
-    <Select options={testOptions} onSelectionChange={testHandler} placeholderText='Default'/>
+    <Select options={options} onSelectionChange={selectionChangeHandler} placeholderText='Default'/>
   );
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
 
 it('changes the selected option', () => {
-    const testOptions: SelectOption[] = [
+    const options: SelectOption[] = [
         { id: '1', displayValue: 'One' },
         { id: '2' , displayValue: 'Two' }
       ]
     
-    const testHandler = jest.fn();
-    const defaultText = 'Placeholder';
-    const {queryByDisplayValue, getByDisplayValue } = render(
-        <Select options={testOptions} onSelectionChange={testHandler} placeholderText={defaultText} />
+    const selectionChangeHandler = jest.fn();
+    const placeholderText = 'Placeholder';
+    const { queryByDisplayValue, getByDisplayValue } = render(
+        <Select options={options} onSelectionChange={selectionChangeHandler} placeholderText={placeholderText} />
     );
 
-    expect(queryByDisplayValue(defaultText)).toBeTruthy();
+    expect(queryByDisplayValue(placeholderText)).toBeTruthy();
 
     // Change to a valid option
-    fireEvent.change(getByDisplayValue(defaultText), { target: { value: '1'}});
+    fireEvent.change(getByDisplayValue(placeholderText), { target: { value: '1'}});
 
     expect(queryByDisplayValue('One')).toBeTruthy();
-    expect(testHandler).toHaveBeenCalled();
+    expect(selectionChangeHandler).toHaveBeenCalled();
 });

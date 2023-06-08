@@ -3,6 +3,7 @@ import Select, { SelectOption } from './Select';
 import {
   FILE_TYPE_CONVERSION_MAP, FileType, DEFAULT_FILE_TYPE, FileTypeConversionMetadata,
 } from '../constants/FileTypes';
+import FileUpload from './FileUpload';
 
 function createSelectOptionFromFileType(fileType: FileType): SelectOption {
   return { id: fileType.key, displayValue: fileType.displayValue };
@@ -25,6 +26,7 @@ function ConversionRequestForm() {
   const [originalType, setOriginalType] = useState<FileType>(DEFAULT_FILE_TYPE);
   const [convertType, setConvertType] = useState<FileType>(DEFAULT_FILE_TYPE);
   const [convertTypeSelectOptions, setConvertTypeSelectOptions] = useState<SelectOption[]>([]);
+  const [files, setFiles] = useState<File[]>([]);
 
   const originalFileTypeSelectOptions: SelectOption[] = Object.keys(FILE_TYPE_CONVERSION_MAP)
     .map((fileTypeKey: string) => createSelectOptionFromFileType(getFileTypeFromMap(fileTypeKey)));
@@ -38,6 +40,7 @@ function ConversionRequestForm() {
 
   useEffect(() => {
     setConvertType(DEFAULT_FILE_TYPE);
+    setFiles([]);
     if (originalType.key !== DEFAULT_FILE_TYPE.key) {
       const conversionData: FileTypeConversionMetadata = FILE_TYPE_CONVERSION_MAP[originalType.key];
       setConvertTypeSelectOptions(
@@ -64,6 +67,7 @@ function ConversionRequestForm() {
         placeholderText="Converted file type"
       />
       <div>{convertType.displayValue}</div>
+      <FileUpload fileTypes={originalType.extensions} files={files} setFiles={setFiles} />
     </div>
   );
 }
