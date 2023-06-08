@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a select form 1`] = `
+<div>
+  <select
+    className="form-select"
+    onChange={[Function]}
+  >
+    <option
+      value=""
+    >
+      Default
+    </option>
+    <option
+      value="1"
+    >
+      One
+    </option>
+    <option
+      value="2"
+    >
+      Two
+    </option>
+  </select>
+</div>
+`;

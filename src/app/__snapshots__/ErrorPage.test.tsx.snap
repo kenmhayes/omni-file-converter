@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders an errorpage with a not found message 1`] = `
+<div
+  className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column"
+>
+  <main
+    className="px-3 mb-auto"
+  >
+    <h1>
+      Oops!
+    </h1>
+    <p>
+      Sorry, an unexpected error has occurred.
+    </p>
+    <i>
+      Not Found
+    </i>
+  </main>
+</div>
+`;
