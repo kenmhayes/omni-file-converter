@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 import Select, { SelectOption } from './Select';
 import {
   FILE_TYPE_CONVERSION_MAP, FileType, DEFAULT_FILE_TYPE, FileTypeConversionMetadata,
 } from '../constants/FileTypes';
 import FileUpload from './FileUpload';
+import { putS3Object } from '../aws/S3Helper';
 
 function createSelectOptionFromFileType(fileType: FileType): SelectOption {
   return { id: fileType.key, displayValue: fileType.displayValue };
@@ -38,6 +40,13 @@ function ConversionRequestForm() {
     setConvertType(getFileTypeFromMap(selectedFileType));
   };
 
+  const onUploadClick = async () => {
+    // Temp code, so untested
+    files.forEach(async (file: File) => {
+      await putS3Object(file.name, file);
+    });
+  };
+
   useEffect(() => {
     setConvertType(DEFAULT_FILE_TYPE);
     setFiles([]);
@@ -68,6 +77,7 @@ function ConversionRequestForm() {
       />
       <div>{convertType.displayValue}</div>
       <FileUpload fileTypes={originalType.extensions} files={files} setFiles={setFiles} />
+      <Button onClick={onUploadClick}>Upload</Button>
     </div>
   );
 }

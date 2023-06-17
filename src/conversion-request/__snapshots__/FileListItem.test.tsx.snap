@@ -8,14 +8,35 @@ exports[`renders a file list item 1`] = `
     className="row"
   >
     <div
-      className="col-9"
+      className="col-6"
     >
       File
+    </div>
+    <div
+      className="col-3"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Get Download
+      </button>
+      <a
+        aria-disabled={true}
+        onClick={[Function]}
+        onKeyDown={[Function]}
+        role="button"
+      >
+        Download
+      </a>
     </div>
     <div
       className="col"
     >
       <button
+        aria-label="remove-file"
         className="btn"
         onClick={[MockFunction]}
         title="Remove File"
