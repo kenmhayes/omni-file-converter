@@ -19,9 +19,10 @@ it('calls the delete handler when the delete icon is pressed', () => {
     );
 
     const deleteButtonRole = "button";
-    expect(queryByRole(deleteButtonRole)).toBeTruthy();
+    const deleteButtonOptions = { name: /remove-file/i };
+    expect(queryByRole(deleteButtonRole, deleteButtonOptions)).toBeTruthy();
 
-    fireEvent.click(getByRole(deleteButtonRole));
+    fireEvent.click(getByRole(deleteButtonRole, deleteButtonOptions));
 
     expect(deleteHandler).toHaveBeenCalled();
 });

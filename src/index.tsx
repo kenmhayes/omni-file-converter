@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { RouterProvider } from 'react-router-dom';
+import AmplifySetup from './aws/AmplifySetup';
 import reportWebVitals from './reportWebVitals';
 import ROUTER from './constants/Routes';
+
+// Setup AWS here
+AmplifySetup();
 
 /**
  * Starting point of the react app with routing support

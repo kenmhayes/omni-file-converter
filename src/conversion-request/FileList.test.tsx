@@ -25,8 +25,9 @@ it('update file from the list when the delete button is pressed', () => {
   );
 
   const deleteButtonRole = "button";
-  expect(queryAllByRole(deleteButtonRole)).toBeTruthy();
-  let deleteButtons = queryAllByRole(deleteButtonRole);
+  const deleteButtonOptions = { name: /remove-file/i };
+  expect(queryAllByRole(deleteButtonRole, deleteButtonOptions)).toBeTruthy();
+  let deleteButtons = queryAllByRole(deleteButtonRole, deleteButtonOptions);
 
   // Delete second element
   fireEvent.click(deleteButtons[1]);
@@ -34,7 +35,7 @@ it('update file from the list when the delete button is pressed', () => {
   expect(setFileHandler).toHaveBeenCalledWith([files[0], files[2]]);
 
   // Delete first element
-  deleteButtons = getAllByRole(deleteButtonRole);
+  deleteButtons = getAllByRole(deleteButtonRole, deleteButtonOptions);
   fireEvent.click(deleteButtons[0]);
 
   expect(setFileHandler).toHaveBeenCalledWith([files[1], files[2]]);
