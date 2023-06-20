@@ -13,6 +13,7 @@ function FileListItem(props: FileListItemProps) {
   const [downloadUrl, setDownloadUrl] = useState<string>('');
 
   const onButtonClick = async () => {
+    // Temp code, so left untested
     const objectDownloadUrl = await getS3ObjectUrl(fileName);
     setDownloadUrl(objectDownloadUrl);
   };
