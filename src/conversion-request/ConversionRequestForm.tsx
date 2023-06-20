@@ -43,7 +43,7 @@ function ConversionRequestForm() {
   const onUploadClick = async () => {
     // Temp code, so untested
     files.forEach(async (file: File) => {
-      await putS3Object(file.name, file);
+      await putS3Object(file.name, convertType.key, file);
     });
   };
 
