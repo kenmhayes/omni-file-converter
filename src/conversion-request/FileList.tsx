@@ -17,15 +17,20 @@ function FileList(props: FileListProps) {
 
   return (
     <div className="container">
-      {files.map(
-        (file: File, index: number) => (
-          <FileListItem
-            key={`${file.name}_index`}
-            fileName={file.name}
-            onDelete={() => onItemDelete(index)}
-          />
-        ),
-      )}
+      <h5>Uploaded files:</h5>
+      <ul className="list-group list-group-flush">
+        {files.map(
+          (file: File, index: number) => (
+            <li className="list-group-item" key={`${file.name}_index`}>
+              <FileListItem
+                fileName={file.name}
+                onDelete={() => onItemDelete(index)}
+              />
+            </li>
+          ),
+        )}
+      </ul>
+
     </div>
   );
 }

@@ -1,4 +1,6 @@
-import { Amplify, Auth, Storage } from 'aws-amplify';
+import {
+  Amplify, Auth, Storage,
+} from 'aws-amplify';
 
 function AmplifySetup() {
   /**
@@ -8,6 +10,14 @@ function AmplifySetup() {
     Auth: {
       identityPoolId: process.env.REACT_APP_IDENTITY_POOL_ID,
       region: process.env.REACT_APP_AWS_REGION,
+    },
+    API: {
+      endpoints: [
+        {
+          name: 'CreateSessionGatewayAPI',
+          endpoint: 'https://6de5ejsmb0.execute-api.us-east-1.amazonaws.com/Prod',
+        },
+      ],
     },
     Storage: {
       AWSS3: {

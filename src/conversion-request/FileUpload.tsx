@@ -21,15 +21,19 @@ function FileUpload(props: FileUploadProps) {
   };
 
   return (
-    <div>
-      <FileUploader
-        disabled={disabled}
-        handleChange={handleChange}
-        name="file"
-        files={files}
-        types={fileTypes}
-      />
-      <FileList files={files} setFiles={setFiles} />
+    <div className="container">
+      <div className="row pb-4">
+        <FileUploader
+          disabled={disabled}
+          handleChange={handleChange}
+          name="file"
+          files={files}
+          types={fileTypes}
+        />
+      </div>
+      <div className="row">
+        <FileList files={files} setFiles={setFiles} />
+      </div>
     </div>
   );
 }

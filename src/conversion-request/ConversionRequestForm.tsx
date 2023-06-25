@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { Button } from 'react-bootstrap';
+import React, {
+  useState, useEffect, ReactElement, PropsWithChildren,
+} from 'react';
+import { Button, Card } from 'react-bootstrap';
 import Select, { SelectOption } from './Select';
 import {
   FILE_TYPE_CONVERSION_MAP, FileType, DEFAULT_FILE_TYPE, FileTypeConversionMetadata,
 } from '../constants/FileTypes';
 import FileUpload from './FileUpload';
-import { putS3Object } from '../aws/S3Helper';
+// import { putS3Object } from '../aws/S3Helper';
+import { CreateSessionRequest, FileConversionInput, createSession } from '../aws/APIHelper';
+
+interface SectionCardProps {
+  headerText: string;
+}
 
 function createSelectOptionFromFileType(fileType: FileType): SelectOption {
   return { id: fileType.key, displayValue: fileType.displayValue };
@@ -17,6 +24,20 @@ function getFileTypeFromMap(fileTypeKey: string): FileType {
     return metadata.fileType;
   }
   return DEFAULT_FILE_TYPE;
+}
+
+function SectionCard(props: PropsWithChildren<SectionCardProps>): ReactElement {
+  const { headerText, children } = props;
+  return (
+    <Card className="mt-4">
+      <Card.Header>
+        <h3>{headerText}</h3>
+      </Card.Header>
+      <Card.Body>
+        {children}
+      </Card.Body>
+    </Card>
+  );
 }
 
 /**
@@ -42,14 +63,30 @@ function ConversionRequestForm() {
 
   const onUploadClick = async () => {
     // Temp code, so untested
+    /*
     files.forEach(async (file: File) => {
       await putS3Object(file.name, convertType.key, file);
     });
+*/
+    const createSessionRequest: CreateSessionRequest = {
+      conversionRequests: files.map(
+        (file: File): FileConversionInput => (
+          {
+            fileName: file.name,
+            originalFileFormat: originalType.key,
+            convertedFileFormat: convertType.key,
+          }
+        ),
+      ),
+    };
+
+    await createSession(createSessionRequest);
   };
 
   useEffect(() => {
     setConvertType(DEFAULT_FILE_TYPE);
     setFiles([]);
+
     if (originalType.key !== DEFAULT_FILE_TYPE.key) {
       const conversionData: FileTypeConversionMetadata = FILE_TYPE_CONVERSION_MAP[originalType.key];
       setConvertTypeSelectOptions(
@@ -64,20 +101,32 @@ function ConversionRequestForm() {
 
   return (
     <div>
-      <Select
-        options={originalFileTypeSelectOptions}
-        onSelectionChange={originalTypeSelectionHandler}
-        placeholderText="Original file type"
-      />
-      <div>{originalType.displayValue}</div>
-      <Select
-        options={convertTypeSelectOptions}
-        onSelectionChange={convertTypeSelectionHandler}
-        placeholderText="Converted file type"
-      />
-      <div>{convertType.displayValue}</div>
-      <FileUpload fileTypes={originalType.extensions} files={files} setFiles={setFiles} />
-      <Button onClick={onUploadClick}>Upload</Button>
+      <SectionCard headerText="Step #1: Choose file formats">
+        <div className="container">
+          <div className="row pb-4">
+            <Select
+              className="col-3"
+              options={originalFileTypeSelectOptions}
+              onSelectionChange={originalTypeSelectionHandler}
+              placeholderText="Original file type"
+            />
+          </div>
+          <div className="row">
+            <Select
+              className="col-3"
+              options={convertTypeSelectOptions}
+              onSelectionChange={convertTypeSelectionHandler}
+              placeholderText="Converted file type"
+            />
+          </div>
+        </div>
+      </SectionCard>
+      <SectionCard headerText="Step #2: Choose files">
+        <FileUpload fileTypes={originalType.extensions} files={files} setFiles={setFiles} />
+      </SectionCard>
+      <SectionCard headerText="Step #3: Upload your files">
+        <Button variant="primary" onClick={onUploadClick}>Upload</Button>
+      </SectionCard>
     </div>
   );
 }

@@ -13,6 +13,7 @@ export interface SelectOption {
  * Input property args for a select control
  */
 export interface SelectProps {
+  className?: string;
   placeholderText: string;
   options: SelectOption[];
   onSelectionChange: (optionId: string) => void;
@@ -38,14 +39,16 @@ function createOptionElement(option: SelectOption): ReactElement {
  *   a react element
  */
 function Select(props: SelectProps) {
-  const { onSelectionChange, options, placeholderText } = props;
+  const {
+    className, onSelectionChange, options, placeholderText,
+  } = props;
 
   const onSelectElementChange = (event: ChangeEvent<HTMLSelectElement>) => {
     onSelectionChange(event.target.value);
   };
 
   return (
-    <div>
+    <div className={className}>
       <Form.Select onChange={onSelectElementChange}>
         <option value="">{placeholderText}</option>
         {
@@ -55,5 +58,9 @@ function Select(props: SelectProps) {
     </div>
   );
 }
+
+Select.defaultProps = {
+  className: '',
+};
 
 export default Select;
