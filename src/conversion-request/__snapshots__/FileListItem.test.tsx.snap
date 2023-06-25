@@ -5,7 +5,7 @@ exports[`renders a file list item 1`] = `
   className="container"
 >
   <div
-    className="row"
+    className="row align-items-center"
   >
     <div
       className="col-6"
@@ -23,14 +23,6 @@ exports[`renders a file list item 1`] = `
       >
         Get Download
       </button>
-      <a
-        aria-disabled={true}
-        onClick={[Function]}
-        onKeyDown={[Function]}
-        role="button"
-      >
-        Download
-      </a>
     </div>
     <div
       className="col"

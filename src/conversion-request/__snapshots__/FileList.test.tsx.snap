@@ -4,158 +4,153 @@ exports[`renders a file list 1`] = `
 <div
   className="container"
 >
-  <div
-    className="container"
+  <h5>
+    Uploaded files:
+  </h5>
+  <ul
+    className="list-group list-group-flush"
   >
-    <div
-      className="row"
+    <li
+      className="list-group-item"
     >
       <div
-        className="col-6"
+        className="container"
       >
-        File 1
-      </div>
-      <div
-        className="col-3"
-      >
-        <button
-          className="btn btn-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
+        <div
+          className="row align-items-center"
         >
-          Get Download
-        </button>
-        <a
-          aria-disabled={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          Download
-        </a>
+          <div
+            className="col-6"
+          >
+            File 1
+          </div>
+          <div
+            className="col-3"
+          >
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Get Download
+            </button>
+          </div>
+          <div
+            className="col"
+          >
+            <button
+              aria-label="remove-file"
+              className="btn"
+              onClick={[Function]}
+              title="Remove File"
+              type="button"
+            >
+              <img
+                alt="Remove File"
+                height="32"
+                src="x-circle.svg"
+                width="32"
+              />
+            </button>
+          </div>
+        </div>
       </div>
-      <div
-        className="col"
-      >
-        <button
-          aria-label="remove-file"
-          className="btn"
-          onClick={[Function]}
-          title="Remove File"
-          type="button"
-        >
-          <img
-            alt="Remove File"
-            height="32"
-            src="x-circle.svg"
-            width="32"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    className="container"
-  >
-    <div
-      className="row"
+    </li>
+    <li
+      className="list-group-item"
     >
       <div
-        className="col-6"
+        className="container"
       >
-        File 2
-      </div>
-      <div
-        className="col-3"
-      >
-        <button
-          className="btn btn-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
+        <div
+          className="row align-items-center"
         >
-          Get Download
-        </button>
-        <a
-          aria-disabled={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          Download
-        </a>
+          <div
+            className="col-6"
+          >
+            File 2
+          </div>
+          <div
+            className="col-3"
+          >
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Get Download
+            </button>
+          </div>
+          <div
+            className="col"
+          >
+            <button
+              aria-label="remove-file"
+              className="btn"
+              onClick={[Function]}
+              title="Remove File"
+              type="button"
+            >
+              <img
+                alt="Remove File"
+                height="32"
+                src="x-circle.svg"
+                width="32"
+              />
+            </button>
+          </div>
+        </div>
       </div>
-      <div
-        className="col"
-      >
-        <button
-          aria-label="remove-file"
-          className="btn"
-          onClick={[Function]}
-          title="Remove File"
-          type="button"
-        >
-          <img
-            alt="Remove File"
-            height="32"
-            src="x-circle.svg"
-            width="32"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
-  <div
-    className="container"
-  >
-    <div
-      className="row"
+    </li>
+    <li
+      className="list-group-item"
     >
       <div
-        className="col-6"
+        className="container"
       >
-        File 3
-      </div>
-      <div
-        className="col-3"
-      >
-        <button
-          className="btn btn-primary"
-          disabled={false}
-          onClick={[Function]}
-          type="button"
+        <div
+          className="row align-items-center"
         >
-          Get Download
-        </button>
-        <a
-          aria-disabled={true}
-          onClick={[Function]}
-          onKeyDown={[Function]}
-          role="button"
-        >
-          Download
-        </a>
+          <div
+            className="col-6"
+          >
+            File 3
+          </div>
+          <div
+            className="col-3"
+          >
+            <button
+              className="btn btn-primary"
+              disabled={false}
+              onClick={[Function]}
+              type="button"
+            >
+              Get Download
+            </button>
+          </div>
+          <div
+            className="col"
+          >
+            <button
+              aria-label="remove-file"
+              className="btn"
+              onClick={[Function]}
+              title="Remove File"
+              type="button"
+            >
+              <img
+                alt="Remove File"
+                height="32"
+                src="x-circle.svg"
+                width="32"
+              />
+            </button>
+          </div>
+        </div>
       </div>
-      <div
-        className="col"
-      >
-        <button
-          aria-label="remove-file"
-          className="btn"
-          onClick={[Function]}
-          title="Remove File"
-          type="button"
-        >
-          <img
-            alt="Remove File"
-            height="32"
-            src="x-circle.svg"
-            width="32"
-          />
-        </button>
-      </div>
-    </div>
-  </div>
+    </li>
+  </ul>
 </div>
 `;

@@ -20,13 +20,16 @@ function FileListItem(props: FileListItemProps) {
 
   return (
     <div className="container">
-      <div className="row">
+      <div className="row align-items-center">
         <div className="col-6">
           {fileName}
         </div>
         <div className="col-3">
-          <Button onClick={onButtonClick}>Get Download</Button>
-          <Anchor href={downloadUrl} disabled={!downloadUrl}>Download</Anchor>
+          {
+            downloadUrl
+              ? <Anchor href={downloadUrl}>Download</Anchor>
+              : <Button onClick={onButtonClick}>Get Download</Button>
+          }
         </div>
         <div className="col">
           <button type="button" aria-label="remove-file" className="btn" title="Remove File" onClick={onDelete}>

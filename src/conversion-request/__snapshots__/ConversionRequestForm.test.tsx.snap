@@ -2,104 +2,180 @@
 
 exports[`renders a conversion request form 1`] = `
 <div>
-  <div>
-    <select
-      className="form-select"
-      onChange={[Function]}
-    >
-      <option
-        value=""
-      >
-        Original file type
-      </option>
-      <option
-        value="jpg"
-      >
-        jpeg/jpg
-      </option>
-      <option
-        value="png"
-      >
-        png
-      </option>
-    </select>
-  </div>
-  <div />
-  <div>
-    <select
-      className="form-select"
-      onChange={[Function]}
-    >
-      <option
-        value=""
-      >
-        Converted file type
-      </option>
-    </select>
-  </div>
-  <div />
-  <div>
-    <label
-      className="sc-aXZVg guZdik  "
-      htmlFor="file"
-      onClick={[Function]}
-    >
-      <input
-        accept=""
-        disabled={false}
-        name="file"
-        onChange={[Function]}
-        onClick={[Function]}
-        type="file"
-      />
-      <svg
-        fill="none"
-        height="32"
-        viewBox="0 0 32 32"
-        width="32"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M5.33317 6.66667H22.6665V16H25.3332V6.66667C25.3332 5.196 24.1372 4 22.6665 4H5.33317C3.8625 4 2.6665 5.196 2.6665 6.66667V22.6667C2.6665 24.1373 3.8625 25.3333 5.33317 25.3333H15.9998V22.6667H5.33317V6.66667Z"
-          fill="#0658C2"
-        />
-        <path
-          d="M10.6665 14.6667L6.6665 20H21.3332L15.9998 12L11.9998 17.3333L10.6665 14.6667Z"
-          fill="#0658C2"
-        />
-        <path
-          d="M25.3332 18.6667H22.6665V22.6667H18.6665V25.3333H22.6665V29.3333H25.3332V25.3333H29.3332V22.6667H25.3332V18.6667Z"
-          fill="#0658C2"
-        />
-      </svg>
-      <div
-        className="sc-eqUAAy jWkLDY"
-      >
-        <span
-          className="sc-fqkvVR kFhUBM"
-        >
-          <span>
-            Upload
-          </span>
-           or drop a file right here
-        </span>
-        <span
-          className="file-types"
-          title="types: "
-        />
-      </div>
-    </label>
-    <div
-      className="container"
-    />
-  </div>
-  <button
-    className="btn btn-primary"
-    disabled={false}
-    onClick={[Function]}
-    type="button"
+  <div
+    className="mt-4 card"
   >
-    Upload
-  </button>
+    <div
+      className="card-header"
+    >
+      <h3>
+        Step #1: Choose file formats
+      </h3>
+    </div>
+    <div
+      className="card-body"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row pb-4"
+        >
+          <div
+            className="col-3"
+          >
+            <select
+              className="form-select"
+              onChange={[Function]}
+            >
+              <option
+                value=""
+              >
+                Original file type
+              </option>
+              <option
+                value="jpg"
+              >
+                jpeg/jpg
+              </option>
+              <option
+                value="png"
+              >
+                png
+              </option>
+            </select>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-3"
+          >
+            <select
+              className="form-select"
+              onChange={[Function]}
+            >
+              <option
+                value=""
+              >
+                Converted file type
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mt-4 card"
+  >
+    <div
+      className="card-header"
+    >
+      <h3>
+        Step #2: Choose files
+      </h3>
+    </div>
+    <div
+      className="card-body"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="row pb-4"
+        >
+          <label
+            className="sc-aXZVg guZdik  "
+            htmlFor="file"
+            onClick={[Function]}
+          >
+            <input
+              accept=""
+              disabled={false}
+              name="file"
+              onChange={[Function]}
+              onClick={[Function]}
+              type="file"
+            />
+            <svg
+              fill="none"
+              height="32"
+              viewBox="0 0 32 32"
+              width="32"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.33317 6.66667H22.6665V16H25.3332V6.66667C25.3332 5.196 24.1372 4 22.6665 4H5.33317C3.8625 4 2.6665 5.196 2.6665 6.66667V22.6667C2.6665 24.1373 3.8625 25.3333 5.33317 25.3333H15.9998V22.6667H5.33317V6.66667Z"
+                fill="#0658C2"
+              />
+              <path
+                d="M10.6665 14.6667L6.6665 20H21.3332L15.9998 12L11.9998 17.3333L10.6665 14.6667Z"
+                fill="#0658C2"
+              />
+              <path
+                d="M25.3332 18.6667H22.6665V22.6667H18.6665V25.3333H22.6665V29.3333H25.3332V25.3333H29.3332V22.6667H25.3332V18.6667Z"
+                fill="#0658C2"
+              />
+            </svg>
+            <div
+              className="sc-eqUAAy jWkLDY"
+            >
+              <span
+                className="sc-fqkvVR kFhUBM"
+              >
+                <span>
+                  Upload
+                </span>
+                 or drop a file right here
+              </span>
+              <span
+                className="file-types"
+                title="types: "
+              />
+            </div>
+          </label>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="container"
+          >
+            <h5>
+              Uploaded files:
+            </h5>
+            <ul
+              className="list-group list-group-flush"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="mt-4 card"
+  >
+    <div
+      className="card-header"
+    >
+      <h3>
+        Step #3: Upload your files
+      </h3>
+    </div>
+    <div
+      className="card-body"
+    >
+      <button
+        className="btn btn-primary"
+        disabled={false}
+        onClick={[Function]}
+        type="button"
+      >
+        Upload
+      </button>
+    </div>
+  </div>
 </div>
 `;
