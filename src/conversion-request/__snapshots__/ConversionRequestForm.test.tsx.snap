@@ -8,9 +8,9 @@ exports[`renders a conversion request form 1`] = `
     <div
       className="card-header"
     >
-      <h3>
+      <h4>
         Step #1: Choose file formats
-      </h3>
+      </h4>
     </div>
     <div
       className="card-body"
@@ -32,16 +32,6 @@ exports[`renders a conversion request form 1`] = `
                 value=""
               >
                 Original file type
-              </option>
-              <option
-                value="jpg"
-              >
-                jpeg/jpg
-              </option>
-              <option
-                value="png"
-              >
-                png
               </option>
             </select>
           </div>
@@ -73,9 +63,9 @@ exports[`renders a conversion request form 1`] = `
     <div
       className="card-header"
     >
-      <h3>
+      <h4>
         Step #2: Choose files
-      </h3>
+      </h4>
     </div>
     <div
       className="card-body"
@@ -143,11 +133,12 @@ exports[`renders a conversion request form 1`] = `
           <div
             className="container"
           >
-            <h5>
+            <h6>
               Uploaded files:
-            </h5>
-            <ul
+            </h6>
+            <div
               className="list-group list-group-flush"
+              onKeyDown={[Function]}
             />
           </div>
         </div>
@@ -160,9 +151,9 @@ exports[`renders a conversion request form 1`] = `
     <div
       className="card-header"
     >
-      <h3>
+      <h4>
         Step #3: Upload your files
-      </h3>
+      </h4>
     </div>
     <div
       className="card-body"

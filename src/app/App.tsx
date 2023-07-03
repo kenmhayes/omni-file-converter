@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import { Outlet } from 'react-router-dom';
 import Header from './Header';
 
@@ -11,9 +10,7 @@ import Header from './Header';
 function App() {
   return (
     <div className="App">
-      <div className="container">
-        <Header />
-      </div>
+      <Header />
       <div className="container">
         <Outlet />
       </div>

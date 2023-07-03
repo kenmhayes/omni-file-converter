@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConversionSession renders a conversion session 1`] = `
+<div>
+  <div
+    className="spinner-border"
+  />
+</div>
+`;

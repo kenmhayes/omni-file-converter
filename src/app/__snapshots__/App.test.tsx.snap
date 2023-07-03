@@ -4,56 +4,55 @@ exports[`renders a navbar and content 1`] = `
 <div
   className="App"
 >
-  <div
-    className="container"
+  <nav
+    className="shadow-sm mb-3 navbar navbar-expand navbar-light bg-dark"
+    data-bs-theme="dark"
   >
-    <nav
-      className="navbar navbar-expand-lg bg-body-tertiary"
+    <div
+      className="container"
     >
+      <a
+        className="d-flex align-items-center navbar-brand"
+        href="/"
+      >
+        <svg
+          fill="currentColor"
+          height="32"
+          width="32"
+        >
+          <use
+            xlinkHref="omni-logo.svg#omni-logo"
+          />
+        </svg>
+        <span>
+          Omni Converter
+        </span>
+      </a>
       <div
-        className="container-fluid"
+        className="navbar-nav"
+        onKeyDown={[Function]}
       >
         <a
-          className="navbar-brand"
+          className="btn btn-outline-light nav-link"
+          data-rr-ui-event-key="/"
+          disabled={false}
           href="/"
           onClick={[Function]}
         >
-          Omni
+          Convert
         </a>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNav"
+        <a
+          className="nav-link"
+          data-rr-ui-event-key="myfiles"
+          disabled={false}
+          href="myfiles"
+          onClick={[Function]}
         >
-          <ul
-            className="navbar-nav"
-          >
-            <li
-              className="nav-item"
-            >
-              <a
-                className="nav-link"
-                href="/"
-                onClick={[Function]}
-              >
-                Convert
-              </a>
-            </li>
-            <li
-              className="nav-item"
-            >
-              <a
-                className="nav-link"
-                href="/myfiles"
-                onClick={[Function]}
-              >
-                My Files
-              </a>
-            </li>
-          </ul>
-        </div>
+          My Files
+        </a>
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
   <div
     className="container"
   />

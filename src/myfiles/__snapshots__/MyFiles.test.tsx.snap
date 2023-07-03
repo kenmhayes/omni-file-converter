@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a session search page 1`] = `
+<div
+  className="container"
+>
+  <h3>
+    Find your converted files
+  </h3>
+  <form
+    className=""
+  >
+    <div
+      className="mb-3"
+    >
+      <label
+        className="form-label"
+        htmlFor="sessionId"
+      >
+        Session ID
+      </label>
+      <input
+        className="form-control"
+        id="sessionId"
+        onChange={[Function]}
+        type="text"
+      />
+    </div>
+    <button
+      className="btn btn-primary"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;

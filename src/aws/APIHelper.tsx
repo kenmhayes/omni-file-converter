@@ -1,5 +1,7 @@
 import { API } from 'aws-amplify';
 
+const SESSION_API_NAME = 'SessionGatewayAPI';
+
 export interface CreateSessionRequest {
   conversionRequests: FileConversionInput[];
 }
@@ -10,15 +12,39 @@ export interface FileConversionInput {
   convertedFileFormat: string;
 }
 
-interface CreateSessionResponseBody {
+interface CreateSessionResponse {
   sessionId: string;
+  fileNameToId: { [key: string]: string };
 }
 
-export const createSession = async (request: CreateSessionRequest): Promise<string> => {
-  const response: CreateSessionResponseBody = await API.post('CreateSessionGatewayAPI', '/createsession', {
-    body: request,
-  });
-  return response.sessionId;
-};
+export interface GetSessionResponse {
+  expirationTime: number;
+  conversions: ConversionOutput[];
+}
 
-export const derp: string = 'derp';
+export interface ConversionOutput {
+  id: string;
+  fileName: string;
+  conversionStatus: string;
+  originalFileFormat: string;
+  convertedFileFormat: string;
+}
+
+// eslint-disable-next-line max-len
+export const createSession = async (request: CreateSessionRequest): Promise<CreateSessionResponse> => API.post(
+  SESSION_API_NAME,
+  '/createsession',
+  {
+    body: request,
+  },
+);
+
+export const getSession = async (sessionId: string): Promise<GetSessionResponse> => API.get(
+  SESSION_API_NAME,
+  '/getsession',
+  {
+    queryStringParameters: {
+      sessionid: sessionId,
+    },
+  },
+);

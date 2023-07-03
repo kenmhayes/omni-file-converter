@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a file type select control group 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="row pb-4"
+  >
+    <div
+      className="col-3"
+    >
+      <select
+        className="form-select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Original file type
+        </option>
+        <option
+          value="jpg"
+        >
+          jpeg/jpg
+        </option>
+        <option
+          value="png"
+        >
+          png
+        </option>
+      </select>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-3"
+    >
+      <select
+        className="form-select"
+        onChange={[Function]}
+      >
+        <option
+          value=""
+        >
+          Converted file type
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+`;

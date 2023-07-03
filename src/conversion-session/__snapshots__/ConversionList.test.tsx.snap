@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConversionList renders a conversion list 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="card"
+  >
+    <div
+      className="card-header"
+    >
+      <h4>
+        Your converted files:
+      </h4>
+    </div>
+    <div
+      className="card-body"
+    >
+      <table
+        className="table"
+      >
+        <thead>
+          <tr>
+            <th>
+              File Name
+            </th>
+            <th>
+              Converted File Type
+            </th>
+            <th>
+              Status
+            </th>
+            <th>
+              Download Link
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              test1.jpg
+            </td>
+            <td>
+              png
+            </td>
+            <td>
+              Ready to download
+            </td>
+            <td>
+              <button
+                className="btn btn-primary"
+                disabled={false}
+                onClick={[Function]}
+                type="button"
+              >
+                Get Download Link
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
