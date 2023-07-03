@@ -32,9 +32,13 @@ const jpeg: FileType = { key: 'jpg', extensions: ['jpg', 'jpeg'], displayValue: 
 
 const png: FileType = { key: 'png', extensions: ['png'], displayValue: 'png' };
 
-export const DEFAULT_FILE_TYPE = { key: '', extensions: [], displayValue: '' };
+export const DEFAULT_FILE_TYPE = { key: 'DEFAULT', extensions: [], displayValue: '' };
 
 export const FILE_TYPE_CONVERSION_MAP: { [fileTypeKey: string]: FileTypeConversionMetadata } = {
+  [DEFAULT_FILE_TYPE.key]: {
+    fileType: DEFAULT_FILE_TYPE,
+    supportedConversionTypeKeys: [],
+  },
   [jpeg.key]: {
     fileType: jpeg,
     supportedConversionTypeKeys: [png.key],

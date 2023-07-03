@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Nav, Navbar } from 'react-bootstrap';
+import omniLogo from '../assets/svg/omni-logo.svg';
 
 /**
  * An element providing navigation bar features, to be displayed at the top of a webpage
@@ -8,21 +9,24 @@ import { Link } from 'react-router-dom';
  */
 function Header() {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Omni</Link>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Convert</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="myfiles">My Files</Link>
-            </li>
-          </ul>
-        </div>
+    <Navbar bg="dark" data-bs-theme="dark" className="shadow-sm mb-3">
+      <div className="container">
+        <Navbar.Brand href="/" className="d-flex align-items-center">
+          <svg width="32" height="32" fill="currentColor">
+            <use xlinkHref={`${omniLogo}#omni-logo`} />
+          </svg>
+          <span>Omni Converter</span>
+        </Navbar.Brand>
+        <Nav>
+          <Nav.Link href="/" className="btn btn-outline-light">
+            Convert
+          </Nav.Link>
+          <Nav.Link href="myfiles">
+            My Files
+          </Nav.Link>
+        </Nav>
       </div>
-    </nav>
+    </Navbar>
   );
 }
 

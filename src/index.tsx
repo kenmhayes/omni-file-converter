@@ -1,6 +1,6 @@
 import React from 'react';
+import './assets/scss/main.scss';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import { RouterProvider } from 'react-router-dom';
 import AmplifySetup from './aws/AmplifySetup';
 import reportWebVitals from './reportWebVitals';

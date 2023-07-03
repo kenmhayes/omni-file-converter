@@ -14,7 +14,7 @@ function AmplifySetup() {
     API: {
       endpoints: [
         {
-          name: 'CreateSessionGatewayAPI',
+          name: 'SessionGatewayAPI',
           endpoint: 'https://6de5ejsmb0.execute-api.us-east-1.amazonaws.com/Prod',
         },
       ],

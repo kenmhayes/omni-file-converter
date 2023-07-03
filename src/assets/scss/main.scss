@@ -1,0 +1,9 @@
+@import "./bootstrapcustom.scss";
+
+@mixin header-bg-color {
+    background-color: $blue-400 !important;
+}
+
+@mixin header-text-color {
+    color: $white !important;
+}

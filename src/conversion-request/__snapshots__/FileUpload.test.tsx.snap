@@ -66,14 +66,17 @@ exports[`renders a file list 1`] = `
     <div
       className="container"
     >
-      <h5>
+      <h6>
         Uploaded files:
-      </h5>
-      <ul
+      </h6>
+      <div
         className="list-group list-group-flush"
+        onKeyDown={[Function]}
       >
-        <li
-          className="list-group-item"
+        <div
+          className="list-group-item list-group-item"
+          data-rr-ui-event-key={null}
+          onClick={[Function]}
         >
           <div
             className="container"
@@ -82,23 +85,11 @@ exports[`renders a file list 1`] = `
               className="row align-items-center"
             >
               <div
-                className="col-6"
+                className="col-4"
               >
                 File 1
               </div>
               <div
-                className="col-3"
-              >
-                <button
-                  className="btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Get Download
-                </button>
-              </div>
-              <div
                 className="col"
               >
                 <button
@@ -108,19 +99,25 @@ exports[`renders a file list 1`] = `
                   title="Remove File"
                   type="button"
                 >
-                  <img
-                    alt="Remove File"
+                  <svg
+                    className="bi"
+                    fill="currentColor"
                     height="32"
-                    src="x-circle.svg"
                     width="32"
-                  />
+                  >
+                    <use
+                      xlinkHref="bootstrap-icons.svg#x-circle"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
           </div>
-        </li>
-        <li
-          className="list-group-item"
+        </div>
+        <div
+          className="list-group-item list-group-item"
+          data-rr-ui-event-key={null}
+          onClick={[Function]}
         >
           <div
             className="container"
@@ -129,23 +126,11 @@ exports[`renders a file list 1`] = `
               className="row align-items-center"
             >
               <div
-                className="col-6"
+                className="col-4"
               >
                 File 2
               </div>
               <div
-                className="col-3"
-              >
-                <button
-                  className="btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Get Download
-                </button>
-              </div>
-              <div
                 className="col"
               >
                 <button
@@ -155,19 +140,25 @@ exports[`renders a file list 1`] = `
                   title="Remove File"
                   type="button"
                 >
-                  <img
-                    alt="Remove File"
+                  <svg
+                    className="bi"
+                    fill="currentColor"
                     height="32"
-                    src="x-circle.svg"
                     width="32"
-                  />
+                  >
+                    <use
+                      xlinkHref="bootstrap-icons.svg#x-circle"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
           </div>
-        </li>
-        <li
-          className="list-group-item"
+        </div>
+        <div
+          className="list-group-item list-group-item"
+          data-rr-ui-event-key={null}
+          onClick={[Function]}
         >
           <div
             className="container"
@@ -176,21 +167,9 @@ exports[`renders a file list 1`] = `
               className="row align-items-center"
             >
               <div
-                className="col-6"
+                className="col-4"
               >
                 File 3
-              </div>
-              <div
-                className="col-3"
-              >
-                <button
-                  className="btn btn-primary"
-                  disabled={false}
-                  onClick={[Function]}
-                  type="button"
-                >
-                  Get Download
-                </button>
               </div>
               <div
                 className="col"
@@ -202,18 +181,22 @@ exports[`renders a file list 1`] = `
                   title="Remove File"
                   type="button"
                 >
-                  <img
-                    alt="Remove File"
+                  <svg
+                    className="bi"
+                    fill="currentColor"
                     height="32"
-                    src="x-circle.svg"
                     width="32"
-                  />
+                  >
+                    <use
+                      xlinkHref="bootstrap-icons.svg#x-circle"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>
           </div>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -2,48 +2,51 @@
 
 exports[`renders a navbar with links 1`] = `
 <nav
-  className="navbar navbar-expand-lg bg-body-tertiary"
+  className="shadow-sm mb-3 navbar navbar-expand navbar-light bg-dark"
+  data-bs-theme="dark"
 >
   <div
-    className="container-fluid"
+    className="container"
   >
     <a
-      className="navbar-brand"
+      className="d-flex align-items-center navbar-brand"
       href="/"
-      onClick={[Function]}
     >
-      Omni
+      <svg
+        fill="currentColor"
+        height="32"
+        width="32"
+      >
+        <use
+          xlinkHref="omni-logo.svg#omni-logo"
+        />
+      </svg>
+      <span>
+        Omni Converter
+      </span>
     </a>
     <div
-      className="collapse navbar-collapse"
-      id="navbarNav"
+      className="navbar-nav"
+      onKeyDown={[Function]}
     >
-      <ul
-        className="navbar-nav"
+      <a
+        className="btn btn-outline-light nav-link"
+        data-rr-ui-event-key="/"
+        disabled={false}
+        href="/"
+        onClick={[Function]}
       >
-        <li
-          className="nav-item"
-        >
-          <a
-            className="nav-link"
-            href="/"
-            onClick={[Function]}
-          >
-            Convert
-          </a>
-        </li>
-        <li
-          className="nav-item"
-        >
-          <a
-            className="nav-link"
-            href="/myfiles"
-            onClick={[Function]}
-          >
-            My Files
-          </a>
-        </li>
-      </ul>
+        Convert
+      </a>
+      <a
+        className="nav-link"
+        data-rr-ui-event-key="myfiles"
+        disabled={false}
+        href="myfiles"
+        onClick={[Function]}
+      >
+        My Files
+      </a>
     </div>
   </div>
 </nav>

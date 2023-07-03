@@ -18,14 +18,14 @@ describe('getS3ObjectUrl', () => {
     });
 });
 
-
-
-it('uploads to a S3 bucket', async () => {
-    const key = 'objectKey';
-    const convertType = 'png';
-    const file = { name: 'TestFile', size: 1024 } as File;
-
-    await putS3Object(key, convertType, file);
-
-    expect(mockedStorage.put).toHaveBeenCalledWith(`${process.env.REACT_APP_S3_ORIGINAL_PREFIX}${convertType}/${key}`, file);
+describe('putS3Object', () => {
+    it('uploads to a S3 bucket', async () => {
+        const key = 'objectKey';
+        const convertType = 'png';
+        const file = { name: 'TestFile', size: 1024 } as File;
+    
+        await putS3Object(key, convertType, file);
+    
+        expect(mockedStorage.put).toHaveBeenCalledWith(`${process.env.REACT_APP_S3_ORIGINAL_PREFIX}${convertType}/${key}`, file);
+    });
 });
