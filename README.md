@@ -1,51 +1,43 @@
-<<<<<<< HEAD
 # omni-file-converter
 Static website for converting various file types to another type via web APIs
-=======
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
 
-## Available Scripts
+Omni is a Cloud-based, serverless application for converting files from one format to another in an asynchronous, queue-based manner. It consists of a React front end application and a AWS + Java based backend.
 
-In the project directory, you can run:
+![omnifileconverter-architecture drawio](https://github.com/kenmhayes/omni-file-converter/assets/6184153/8b63a29a-900f-4555-8363-04a9016787b2)
 
-### `yarn start`
+It consists of Cognito authentication paired with API Gateway REST APIs and S3 file access. Behind the scenes, Lambda functions handle the conversion and handling of the user session state in a persistent way via DynamoDB.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+There are two accompanying reposistories consisting of code packages for the Lambda functions and templates that can be used to create the AWS resources via CloudFormation.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- [Conversion Session Lambda](https://github.com/kenmhayes/conversion-session-lambda)
+- [File Converter Lambda](https://github.com/kenmhayes/file-converter-lambda)
 
-### `yarn test`
+## Current Status & Roadmap
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+__Note: This project is mostly proof of concept for a serverless architecture using AWS. There are currently no plans in commercializing this.__
 
-### `yarn build`
+### Currently implemented
+- Uploading files to S3 and downlading converted versions of those files
+- - Currently supports basic image types
+- Creation of user session pages that can be returned to before expiration time
+- - Automatic deletion of session data from DynamoDB
+- API Gateway to call Lambda functions via front end
+- Cognito authentication for API calls and S3 access
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Not yet implemented
+- SQS queue to handle conversion status updates so front end can poll if file download is ready
+- Error handling and user input validation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Web Application
+## Build & Deploy
+This is a React application built using Create-React-App and used the Yarn package manager.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use the following commands:
+- sudo yarn build
+- sudo yarn test
+- sudo yarn start (local development server)
 
-### `yarn eject`
+There are several environment variables referencing AWS resources that need to be set. These are found in the .env file. Instead of writing values to that file directly, you can create override files such as .env.local
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
->>>>>>> 4f57628 (Initialize project using Create React App)
