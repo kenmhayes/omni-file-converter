@@ -5,7 +5,8 @@ Static website for converting various file types to another type via web APIs
 
 Omni is a Cloud-based, serverless application for converting files from one format to another in an asynchronous, queue-based manner. It consists of a React front end application and a AWS + Java based backend.
 
-![omnifileconverter-architecture drawio](https://github.com/kenmhayes/omni-file-converter/assets/6184153/8b63a29a-900f-4555-8363-04a9016787b2)
+![omnifileconverter-architecture drawio](https://github.com/kenmhayes/omni-file-converter/assets/6184153/e30b1258-6711-419a-b6c2-97f71e827d9f)
+
 
 It consists of Cognito authentication paired with API Gateway REST APIs and S3 file access. Behind the scenes, Lambda functions handle the conversion and handling of the user session state in a persistent way via DynamoDB.
 
@@ -32,8 +33,9 @@ __Note: This project is mostly proof of concept for a serverless architecture us
 
 # Web Application
 
-![Screenshot from 2023-07-03 02-01-55](https://github.com/kenmhayes/omni-file-converter/assets/6184153/99489135-4ea3-4518-8dd3-cf295a1f94a5)
-![Screenshot from 2023-07-03 02-02-35](https://github.com/kenmhayes/omni-file-converter/assets/6184153/23c0b385-6dd9-46af-a0c4-a34ef57f37fe)
+![Screenshot from 2023-07-03 02-01-55](https://github.com/kenmhayes/omni-file-converter/assets/6184153/3d49b044-3893-4196-8a26-e9895ceb7efb)
+![Screenshot from 2023-07-03 02-02-35](https://github.com/kenmhayes/omni-file-converter/assets/6184153/f5ba4bac-d429-4929-a02c-411426075312)
+
 
 
 ## Build & Deploy
